@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="intro-screen" class="intro-screen">
+        <div class="blooming-flowers">
+            <span class="flower" style="left: 10%; top: 20%; animation-delay: 0s;">🌸</span>
+            <span class="flower" style="left: 80%; top: 15%; animation-delay: 1s;">🌺</span>
+            <span class="flower" style="left: 25%; top: 70%; animation-delay: 2s;">🌷</span>
+            <span class="flower" style="left: 70%; top: 80%; animation-delay: 0.5s;">🌹</span>
+            <span class="flower" style="left: 50%; top: 40%; animation-delay: 1.5s;">🪻</span>
+            <span class="flower" style="left: 15%; top: 50%; animation-delay: 2.5s;">🌼</span>
+            <span class="flower" style="left: 85%; top: 55%; animation-delay: 3s;">💐</span>
+            <span class="flower" style="left: 40%; top: 85%; animation-delay: 1.2s;">🌸</span>
+        </div>
+        <div class="intro-content">
+            <div class="birthday-title">Happy Birthday</div>
+            <div class="birthday-name">Ada</div>
+            <div class="intro-message">Touch to Begin</div>
+        </div>
+    </div>
+
+    <div class="main-content hidden" id="mainContent">
+        <div class="music-control">
+            <button class="music-btn" id="musicBtn">
+                <span class="music-icon">🎵</span>
+            </button>
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="music/G.E.M.邓紫棋+-+唯一.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="confetti-container" id="confetti"></div>
+
+        <div class="timeline-container" id="timeline">
+            <div class="timeline-center-line"></div>
+
+            <div class="timeline-section">
+                <div class="phase-marker">
+                    <span class="phase-icon">📚</span>
+                    <span class="phase-years">2017 - 2019</span>
+                    <span class="phase-title">学生时代</span>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2017">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo1.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2017</div>
+                        <div class="photo-desc">第一次dating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2017">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo2.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2017</div>
+                        <div class="photo-desc">学生时代拍照有很多表情</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2017">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo3.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2017</div>
+                        <div class="photo-desc">南卡感恩节</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2018">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo4.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2018</div>
+                        <div class="photo-desc">北卡的奶茶店</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2018">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo5.jpg" alt="照片">
+                        <div class="photo-hint">点开试试</div>
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2018</div>
+                        <div class="photo-desc">你来看我的演出</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2018">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo6.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2018</div>
+                        <div class="photo-desc">我们的南美旅行</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2019">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo7.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2019</div>
+                        <div class="photo-desc">难以超越的土耳其</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2019">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo8.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2019</div>
+                        <div class="photo-desc">梦幻的2019</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2019">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo9.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2019</div>
+                        <div class="photo-desc">凌晨爬起来追热气球</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <div class="phase-marker">
+                    <span class="phase-icon">💕</span>
+                    <span class="phase-years">2021 - 2022</span>
+                    <span class="phase-title">异地友谊</span>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2021">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo10.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2021</div>
+                        <div class="photo-desc">在国贸Dior</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2022">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo11.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2022</div>
+                        <div class="photo-desc">隔离很久来看我</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <div class="phase-marker">
+                    <span class="phase-icon">🇨🇳</span>
+                    <span class="phase-years">2023 - 2026</span>
+                    <span class="phase-title">回国再聚</span>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2023">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo12.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2023</div>
+                        <div class="photo-desc">在LA重逢</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2023">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo13.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2023</div>
+                        <div class="photo-desc">愿你遇良人</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2023">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo14.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2023</div>
+                        <div class="photo-desc">我结婚时哭惨的你</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2024">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo15.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2024</div>
+                        <div class="photo-desc">见证八宝粥的一岁</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2024">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo16.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2024</div>
+                        <div class="photo-desc">崽们的友情</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2025">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo17.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2025</div>
+                        <div class="photo-desc">你请我吃漂亮饭</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2025">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo18.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2025</div>
+                        <div class="photo-desc">很爱这张的氛围感</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item left" data-year="2026">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo19.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2026</div>
+                        <div class="photo-desc">春天的徐滨日落</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item right" data-year="2026">
+                <div class="photo-dot"></div>
+                <div class="photo-frame">
+                    <div class="photo-wrapper">
+                        <img class="photo" src="photos/photo20.jpg" alt="照片">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-year">2026</div>
+                        <div class="photo-desc">见到你就是最好的</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-animation" id="finalAnimation">
+                <canvas id="heartCanvas"></canvas>
+                <div class="final-overlay">
+                    <div class="birthday-text">Happy Birthday Ada</div>
+                    <div class="sparkles"></div>
+                </div>
+            </div>
+
+            <div class="final-message">
+                <div class="message-content">
+                    <div class="final-title">Dearest Ada</div>
+                    <div class="final-wishes">
+                        <p>岁月流转，情谊不变</p>
+                        <p>愿你的每一天都如生日般美好</p>
+                        <p>永远年轻，永远热泪盈眶</p>
+                    </div>
+                    <div class="signature">With Love</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-hint">
+            <span class="hint-text">Scroll to Explore</span>
+        </div>
+    </div>
+
+    <div class="postcard-modal" id="postcardModal">
+        <button class="close-postcard" id="closePostcard">×</button>
+        <button class="back-btn" id="backBtn">← 返回</button>
+        <button class="nav-btn nav-prev" id="navPrev">‹</button>
+        <button class="nav-btn nav-next" id="navNext">›</button>
+        <div class="postcard-container" id="postcardContainer">
+            <div class="postcard" id="postcard">
+                <div class="postcard-image-wrapper">
+                    <img class="postcard-image" id="postcardImage" src="" alt="">
+                    <div class="postcard-border"></div>
+                </div>
+                <div class="postcard-content">
+                    <div class="postcard-date" id="postcardDate"></div>
+                    <div class="postcard-desc" id="postcardDesc"></div>
+                    <div class="postcard-footer">
+                        <button class="download-btn" id="downloadBtn">💾 保存书签</button>
+                        <div class="postcard-hint">点击按钮保存</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="postcard-indicator" id="postcardIndicator">1 / 20</div>
+        <div class="download-hint" id="downloadHint">正在保存...</div>
+    </div>
+
+    <script>
+        const introScreen = document.getElementById('intro-screen');
+        const mainContent = document.getElementById('mainContent');
+        const musicBtn = document.getElementById('musicBtn');
+        const bgMusic = document.getElementById('bgMusic');
+        const postcardModal = document.getElementById('postcardModal');
+        const closePostcard = document.getElementById('closePostcard');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const postcardImage = document.getElementById('postcardImage');
+        const postcardDate = document.getElementById('postcardDate');
+        const postcardDesc = document.getElementById('postcardDesc');
+        const downloadHint = document.getElementById('downloadHint');
+        const postcardIndicator = document.getElementById('postcardIndicator');
+        const navPrev = document.getElementById('navPrev');
+        const navNext = document.getElementById('navNext');
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        let isPlaying = false;
+        let currentIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const photosData = Array.from(photoItems).map(item => ({
+            src: item.querySelector('.photo').src,
+            desc: item.querySelector('.photo-desc').textContent,
+            year: item.querySelector('.photo-year').textContent
+        }));
+
+        photoItems.forEach(item => {
+            const wrapper = item.querySelector('.photo-wrapper');
+            const hint = document.createElement('div');
+            hint.className = 'photo-hint';
+            hint.textContent = '点开试试';
+            wrapper.appendChild(hint);
+        });
+
+        introScreen.addEventListener('click', () => {
+            introScreen.classList.add('fade-out');
+            mainContent.classList.remove('hidden');
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                musicBtn.classList.add('playing');
+            }).catch(() => {
+                console.log('Auto-play prevented');
+            });
+        });
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.classList.remove('playing');
+            } else {
+                bgMusic.play();
+                musicBtn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        function openPostcard(index) {
+            currentIndex = index;
+            const data = photosData[index];
+            
+            postcardImage.onload = function() {
+                const imgRatio = postcardImage.naturalWidth / postcardImage.naturalHeight;
+                const maxWidth = window.innerWidth * 0.9;
+                const maxHeight = window.innerHeight * 0.85;
+                
+                let cardWidth, cardHeight;
+                
+                if (imgRatio > 1) {
+                    cardWidth = Math.min(maxWidth, 500);
+                    cardHeight = cardWidth / imgRatio;
+                } else {
+                    cardHeight = Math.min(maxHeight * 0.6, 450);
+                    cardWidth = cardHeight * imgRatio;
+                }
+                
+                postcard.style.width = cardWidth + 'px';
+                postcard.style.maxWidth = '90vw';
+            };
+            
+            postcardImage.src = data.src;
+            postcardDate.textContent = data.year;
+            postcardDesc.textContent = data.desc;
+            postcardIndicator.textContent = `${index + 1} / ${photosData.length}`;
+            document.body.style.overflow = 'hidden';
+            postcardModal.classList.add('active');
+        }
+
+        photoItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                openPostcard(index);
+            });
+        });
+
+        const backBtn = document.getElementById('backBtn');
+
+        closePostcard.addEventListener('click', () => {
+            postcardModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        backBtn.addEventListener('click', () => {
+            postcardModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            downloadImage();
+        });
+
+        postcardModal.addEventListener('click', (e) => {
+            if (e.target === postcardModal) {
+                postcardModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        navPrev.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                openPostcard(currentIndex - 1);
+            }
+        });
+
+        navNext.addEventListener('click', () => {
+            if (currentIndex < photosData.length - 1) {
+                openPostcard(currentIndex + 1);
+            }
+        });
+
+        postcardModal.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        postcardModal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentIndex < photosData.length - 1) {
+                    openPostcard(currentIndex + 1);
+                } else if (diff < 0 && currentIndex > 0) {
+                    openPostcard(currentIndex - 1);
+                }
+            }
+        }
+
+        function downloadImage() {
+            const img = document.getElementById('postcardImage');
+            const imgRatio = img.naturalWidth / img.naturalHeight;
+            
+            const scale = 2;
+            const baseWidth = 300;
+            const canvasWidth = baseWidth * scale;
+            const imageHeight = Math.min(baseWidth / imgRatio, 600);
+            const canvasHeight = (imageHeight + 100) * scale;
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
+            ctx.scale(scale, scale);
+            
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, baseWidth, canvasHeight / scale);
+            
+            ctx.drawImage(img, 0, 0, baseWidth, imageHeight);
+            
+            ctx.strokeStyle = 'rgba(200, 180, 170, 0.3)';
+            ctx.lineWidth = 2;
+            const border = 10;
+            ctx.strokeRect(border, border, baseWidth - border * 2, imageHeight - border * 2);
+            
+            ctx.fillStyle = '#c9a89a';
+            ctx.font = '10px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(postcardDate.textContent.toUpperCase(), baseWidth / 2, imageHeight + 22);
+            
+            ctx.fillStyle = '#5a5a5a';
+            ctx.font = '14px Georgia, serif';
+            ctx.fillText(postcardDesc.textContent, baseWidth / 2, imageHeight + 48);
+            
+            ctx.strokeStyle = 'rgba(200, 180, 170, 0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(baseWidth / 2, imageHeight + 32);
+            ctx.lineTo(baseWidth / 2, imageHeight + 55);
+            ctx.stroke();
+            
+            downloadHint.textContent = '正在保存...';
+            
+            setTimeout(() => {
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+                const link = document.createElement('a');
+                link.download = `birthday_${postcardDate.textContent}.jpg`;
+                link.href = dataUrl;
+                
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                    link.target = '_blank';
+                }
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                downloadHint.textContent = '保存成功！';
+                setTimeout(() => {
+                    downloadHint.classList.remove('show');
+                }, 2000);
+            }, 300);
+        }
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        photoItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        function createConfetti() {
+            const container = document.getElementById('confetti');
+            const colors = ['#e8d4cc', '#d4c4b5', '#c9a89a', '#f0ebe8', '#f5ebe6'];
+
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 4 + 's';
+                confetti.style.animationDuration = (3 + Math.random() * 3) + 's';
+                container.appendChild(confetti);
+            }
+        }
+        createConfetti();
+
+        const finalAnimation = document.getElementById('finalAnimation');
+        const heartCanvas = document.getElementById('heartCanvas');
+        const ctx = heartCanvas.getContext('2d');
+
+        let animationStarted = false;
+        let animationFrame = 0;
+        let images = [];
+        let heartImages = [];
+
+        const heartAnimation = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationStarted) {
+                    animationStarted = true;
+                    startHeartAnimation();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        heartAnimation.observe(finalAnimation);
+
+        function startHeartAnimation() {
+            finalAnimation.classList.add('active');
+            
+            const canvasWidth = heartCanvas.offsetWidth;
+            const canvasHeight = heartCanvas.offsetHeight;
+            heartCanvas.width = canvasWidth * window.devicePixelRatio;
+            heartCanvas.height = canvasHeight * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+            const corners = [
+                { x: 0, y: 0 },
+                { x: canvasWidth, y: 0 },
+                { x: 0, y: canvasHeight },
+                { x: canvasWidth, y: canvasHeight },
+                { x: canvasWidth / 2, y: 0 },
+                { x: canvasWidth / 2, y: canvasHeight },
+                { x: 0, y: canvasHeight / 2 },
+                { x: canvasWidth, y: canvasHeight / 2 }
+            ];
+
+            images = [];
+            photoItems.forEach((item, index) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.src = item.querySelector('.photo').src;
+                img.onload = () => {
+                    const corner = corners[index % corners.length];
+                    const randomOffset = {
+                        x: (Math.random() - 0.5) * 150,
+                        y: (Math.random() - 0.5) * 150
+                    };
+
+                    const maxSize = 150;
+                    const ratio = img.width / img.height;
+                    let w, h;
+                    if (ratio > 1) {
+                        w = maxSize;
+                        h = maxSize / ratio;
+                    } else {
+                        h = maxSize;
+                        w = maxSize * ratio;
+                    }
+
+                    images.push({
+                        img: img,
+                        width: w,
+                        height: h,
+                        startX: corner.x + randomOffset.x,
+                        startY: corner.y + randomOffset.y,
+                        x: corner.x + randomOffset.x,
+                        y: corner.y + randomOffset.y,
+                        targetX: 0,
+                        targetY: 0,
+                        startScale: 1,
+                        targetScale: 0.3 + Math.random() * 0.15,
+                        currentScale: 1,
+                        arrived: false,
+                        delay: index * 0.12,
+                        phase: 'appear'
+                    });
+
+                    if (images.length === photoItems.length) {
+                        animationFrame = 0;
+                        animate();
+                    }
+                };
+            });
+        }
+
+        function heartShape(t, scale = 1) {
+            const x = 16 * Math.pow(Math.sin(t), 3);
+            const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+            return {
+                x: x * scale,
+                y: y * scale
+            };
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, heartCanvas.offsetWidth, heartCanvas.offsetHeight);
+
+            const centerX = heartCanvas.offsetWidth / 2;
+            const centerY = heartCanvas.offsetHeight / 2;
+            const heartScale = Math.min(heartCanvas.offsetWidth, heartCanvas.offsetHeight) / 45;
+
+            let allArrived = true;
+
+            images.forEach((imgData, index) => {
+                if (animationFrame < imgData.delay * 60) {
+                    allArrived = false;
+                    return;
+                }
+
+                const adjustedFrame = animationFrame - imgData.delay * 60;
+
+                if (imgData.phase === 'appear') {
+                    if (adjustedFrame < 30) {
+                        const alpha = Math.min(adjustedFrame / 15, 1);
+                        drawImageWithEffect(imgData, alpha);
+                    } else if (adjustedFrame < 60) {
+                        drawImageWithEffect(imgData, 1);
+                    } else {
+                        imgData.phase = 'fly';
+                    }
+                    allArrived = false;
+                } else if (imgData.phase === 'fly') {
+                    const progress = Math.min(adjustedFrame / 150, 1);
+                    const eased = 1 - Math.pow(1 - progress, 4);
+
+                    const targetAngle = (index / images.length) * Math.PI * 2 - Math.PI / 2;
+                    const heartPos = heartShape(targetAngle, heartScale);
+                    imgData.targetX = centerX + heartPos.x;
+                    imgData.targetY = centerY + heartPos.y;
+
+                    imgData.x = imgData.startX + (imgData.targetX - imgData.startX) * eased;
+                    imgData.y = imgData.startY + (imgData.targetY - imgData.startY) * eased;
+                    imgData.currentScale = imgData.startScale - (imgData.startScale - imgData.targetScale) * eased;
+
+                    if (progress >= 1) {
+                        imgData.phase = 'idle';
+                        imgData.arrived = true;
+                    }
+                    allArrived = false;
+                    drawImageWithEffect(imgData, 1);
+                } else {
+                    drawImageWithEffect(imgData, 1);
+                }
+            });
+
+            drawSparkles(centerX, centerY);
+
+            if (!allArrived) {
+                animationFrame++;
+                requestAnimationFrame(animate);
+            } else {
+                setTimeout(() => {
+                    startHeartAnimation();
+                }, 2000);
+            }
+        }
+
+        function drawImageWithEffect(imgData, alpha = 1) {
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.translate(imgData.x, imgData.y);
+            ctx.scale(imgData.currentScale, imgData.currentScale);
+
+            const w = imgData.width;
+            const h = imgData.height;
+
+            ctx.shadowColor = 'rgba(255, 182, 193, 0.5)';
+            ctx.shadowBlur = 20;
+            ctx.beginPath();
+            ctx.roundRect(-w / 2, -h / 2, w, h, 10);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.roundRect(-w / 2 + 3, -h / 2 + 3, w - 6, h - 6, 7);
+            ctx.clip();
+            ctx.drawImage(imgData.img, -w / 2 + 3, -h / 2 + 3, w - 6, h - 6);
+
+            ctx.restore();
+        }
+
+        let sparklePositions = [];
+        for (let i = 0; i < 30; i++) {
+            sparklePositions.push({
+                x: Math.random() * 100,
+                y: Math.random() * 100,
+                size: 2 + Math.random() * 4,
+                speed: 0.5 + Math.random() * 1,
+                opacity: Math.random()
+            });
+        }
+
+        function drawSparkles(cx, cy) {
+            sparklePositions.forEach((sparkle, i) => {
+                sparkle.opacity = 0.3 + Math.sin(animationFrame * 0.1 + i) * 0.3;
+                
+                const x = cx + (sparkle.x - 50) * 3;
+                const y = cy + (sparkle.y - 50) * 3;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, sparkle.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${sparkle.opacity})`;
+                ctx.shadowColor = '#ffb6c1';
+                ctx.shadowBlur = 10;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            });
+        }
+
+        document.addEventListener('touchmove', (e) => {
+            if (postcardModal.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
